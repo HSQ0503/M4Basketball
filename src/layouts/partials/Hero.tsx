@@ -56,11 +56,11 @@ const Hero = () => {
       <div className="absolute z-30 bottom-1 left-0 w-full">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center lg:justify-start justify-center gap-14 py-10">
-            {hero.reviews.map((r: { company_logo: string; rating: number }, i: number) => (
+            {hero.reviews.map((r: { company_logo: string; rating: number; name: string }, i: number) => (
               <div data-aos="fade-left-sm" data-aos-delay={80 + i * 50} key={i}>
                 <ImageFallback
                   src={r.company_logo}
-                  alt={r.company_logo}
+                  alt={r.name}
                   width={185}
                   height={52}
                   className="pb-5"
@@ -68,17 +68,12 @@ const Hero = () => {
                   data-aos-delay={100 + i * 50}
                 />
                 <div
-                  className="flex justify-start items-center gap-x-2"
+                  className="flex justify-center items-center gap-x-2"
                   data-aos="fade-up-sm"
                   data-aos-delay={120 + i * 50}
                 >
-                  <div
-                    className="Stars"
-                    style={{ "--rating": r.rating } as React.CSSProperties}
-                    aria-label="Rating from the company"
-                  />
-                  <span className="text-base ml-[10px]">
-                    {r.rating} Out of 5
+                  <span className="text-base font-medium text-center">
+                    {r.name}
                   </span>
                 </div>
               </div>

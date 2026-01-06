@@ -1,29 +1,44 @@
 ---
-title: "House <br> Cleaning"
-meta_title: ""
-description: "this is meta descriptio"
-icon: "FaHouseChimneyWindow"
+title: "Group <br> Training"
+meta_title: "Group Training Program | M4 Basketball"
+description: "Elite group basketball training for up to 12 players. Focus on fundamentals, basketball IQ, and game situations. $80 per hour."
+icon: "FaBasketball"
 banner: "/images/service/2.png"
-date: 2025-04-04T05:00:00Z
-categories: ["Kitchen"]
+date: 2025-01-03T05:00:00Z
+categories: ["Training"]
 weight: 1
-draft: false
+draft: true
 ---
 
-### We give the best services
+### Year-Round Basketball Development
 
-Companies seem to dislike the term ‘turnaround consulting’ because it represents failure. The truth is that turnaround consulting represents success at realizing the company is going in the wrong direction. The only time the company fails is when it is not possible to do a turnaround anymore. We help to all companies pivot into more profitable directions where they can expand and grow. It is inevitable that companies will end up making a few mistakes; we help them correct these mistakes.
+Our group training program provides comprehensive basketball development for up to 12 serious players aged 11-16. Training twice per week focuses on building complete players through fundamentals, basketball IQ, decision-making, and mental development.
 
-USA champions professionalism in the cleaning industry by providing top-quality cleaning and related services that meet and exceed the expectations of today’s demanding corporate, office, industrial and warehouse clients…courteously, responsively, responsibly, dependably, economically and on-time. We provide janitorial.
+Learn from Olympic athlete Marcelinho Machado, who brings international experience from the 2012 London Olympics, five FIBA World Cups, three Pan American Championships, and professional careers in Brazil and Europe including the EuroLeague.
 
-A neatly maintained building is an important asset to every organization. It reflects who you are and influences how your customers perceive you.
+The program emphasizes playing basketball the right way—with intensity, intelligence, discipline, and respect for the game. Players develop the ability to make correct reads, understand spacing and timing, and compete every possession with purpose.
 
-###### Service overview
+###### Program Overview
 
-A neatly maintained building is an important asset to every organization. It reflects who you are and influences how your customers perceive you to complete depending on the size.
+**Who:** Ages 11-16, intermediate to high-level players pursuing high school and college opportunities
 
-Condition of your home. We work in teams of 2-4 or more. A team leader or the owner.
+**When:** Jan-Feb on Saturdays 3-5 PM, March+ weekdays (schedule TBD)
 
-###### Service quality
+**Where:** Family Church, 300 Main Street, Windermere, FL
 
-As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting. or lipsum as it is sometimes known, is dummy text used in laying out print, grap or web designs. USA champions professionalism in the cleaning industry by providing top-quality cleaning and related services that meet and exceed the expectations of today’s demanding corporate.
+**Group Size:** Up to 12 players maximum for quality coaching and individual attention
+
+###### Training Focus
+
+Year-round development covering:
+
+- **Fundamentals:** Shooting, ball handling, footwork, defensive techniques
+- **Basketball IQ:** Decision-making, court awareness, spacing, timing, reading situations  
+- **Mental Development:** Confidence, work ethic, discipline, competitive mindset
+- **Game Situations:** Real-game scenarios with future competition opportunities
+
+###### Pricing
+
+**$80 per hour** for group training (up to 12 athletes)
+
+Limited spots available. Apply now to reserve your position in this elite training program.

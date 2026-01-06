@@ -71,25 +71,27 @@ const Header = () => {
 
   return (
     <>
-      <div
-        className="absolute top-0 z-20 flex flex-col sm:flex-row justify-center items-center gap-4.5 w-full bg-primary py-2"
-        data-aos="fade-down-sm"
-      >
-        <p
-          className="text-text-light/80 text-base-sm"
-          dangerouslySetInnerHTML={markdownify(notification.message)}
-        />
-
-        <a
-          href={notification.link}
-          className="text-text-light flex items-center"
+      {notification.enable && (
+        <div
+          className="absolute top-0 z-20 flex flex-col sm:flex-row justify-center items-center gap-4.5 w-full bg-primary py-2"
+          data-aos="fade-down-sm"
         >
-          <DynamicIcon icon={notification.icon} className="mr-2.5" />
-          {notification.label}
-        </a>
-      </div>
+          <p
+            className="text-text-light/80 text-base-sm"
+            dangerouslySetInnerHTML={markdownify(notification.message)}
+          />
 
-      <header className="header z-50 absolute top-26 sm:top-12">
+          <a
+            href={notification.link}
+            className="text-text-light flex items-center"
+          >
+            <DynamicIcon icon={notification.icon} className="mr-2.5" />
+            {notification.label}
+          </a>
+        </div>
+      )}
+
+      <header className="header z-50 absolute top-0">
         <nav className="navbar mx-auto max-w-[1356px]! px-[30px]">
           {/* logo  */}
           <div className="order-0 flex items-center" data-aos="zoom-in" data-aos-delay="20">

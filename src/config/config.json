@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Cleaner - Nextjs Theme for Services Business",
-    "base_url": "https://cleaner-nextjs.vercel.app/",
+    "title": "Marcelinho Machado Basketball Training | Elite Basketball Coaching in Orlando",
+    "base_url": "https://m4basketball.com/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -9,7 +9,7 @@
     "footer_logo": "/images/logo.svg",
     "logo_width": "220",
     "logo_height": "65",
-    "logo_text": "cleaner"
+    "logo_text": "M4 Basketball"
   },
 
   "settings": {
@@ -19,21 +19,21 @@
   "params": {
     "contact_form_action": "#",
     "appointment_form_action": "#",
-    "footer_description": "Professional cleaning services <br> using innovative technology.",
-    "copyright": "[Themefisher](https://themefisher.com/) © 2025 All Rights Reserved"
+    "footer_description": "Elite basketball training from Olympic <br> athlete Marcelinho Machado in Orlando.",
+    "copyright": "© 2025 Marcelinho Machado Basketball Training. All Rights Reserved"
   },
 
   "notification": {
     "enable": false,
-    "message": "Need quick cleaning help?",
-    "link": "tel:+1-394-495-5993",
-    "label": "Call Us: +1 071 281 9795",
-    "icon": "FaPhone"
+    "message": "Limited spots available!",
+    "link": "/appointment",
+    "label": "Reserve Your Spot Now",
+    "icon": "FaBasketball"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Make An Appointment ",
+    "label": "Apply Now",
     "link": "/appointment"
   },
 
@@ -43,8 +43,8 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Marcelinho Machado",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Cleaner - Nextjs Theme for Services Business"
+    "meta_description": "Elite basketball training in Orlando from Olympic athlete Marcelinho Machado. Limited spots for serious youth players ages 11-16. Focus on basketball IQ, skills, and mental development."
   }
 }

@@ -1,29 +1,45 @@
 ---
-title: "Window <br> Cleaning"
-meta_title: ""
-description: "this is meta descriptio"
-icon: "FaRegWindowRestore"
+title: "Small Group <br> Training"
+meta_title: "Small Group Training | M4 Basketball"
+description: "Exclusive small group basketball training for 3-6 players. Maximum individual attention from Olympic coach Marcelinho Machado. $150 per hour."
+icon: "FaUsers"
 banner: "/images/service/5.png"
-date: 2025-04-04T05:00:00Z
-categories: ["Kitchen"]
+date: 2025-01-03T05:00:00Z
+categories: ["Training"]
 weight: 2
-draft: false
+draft: true
 ---
 
-### We give the best services
+### Premium Individual Attention
 
-Companies seem to dislike the term ‘turnaround consulting’ because it represents failure. The truth is that turnaround consulting represents success at realizing the company is going in the wrong direction. The only time the company fails is when it is not possible to do a turnaround anymore. We help to all companies pivot into more profitable directions where they can expand and grow. It is inevitable that companies will end up making a few mistakes; we help them correct these mistakes.
+Our small group training program offers the most personalized coaching experience with only 3-6 players per session. This exclusive format allows Olympic athlete Marcelinho Machado to provide intensive, individualized instruction tailored to each player's specific needs and development goals.
 
-USA champions professionalism in the cleaning industry by providing top-quality cleaning and related services that meet and exceed the expectations of today’s demanding corporate, office, industrial and warehouse clients…courteously, responsively, responsibly, dependably, economically and on-time. We provide janitorial.
+Perfect for players who want accelerated development and deeper one-on-one coaching time. With fewer players, sessions can be customized to focus on specific skills, weaknesses, and game situations that matter most to each athlete's journey.
 
-A neatly maintained building is an important asset to every organization. It reflects who you are and influences how your customers perceive you.
+The small group format combines the benefits of individual training with the competitive dynamic of working with other elite players who push each other to improve.
 
-###### Service overview
+###### Program Overview
 
-A neatly maintained building is an important asset to every organization. It reflects who you are and influences how your customers perceive you to complete depending on the size.
+**Who:** Ages 11-16, intermediate to high-level players serious about basketball development
 
-Condition of your home. We work in teams of 2-4 or more. A team leader or the owner.
+**When:** Flexible scheduling available - contact for availability
 
-###### Service quality
+**Where:** Family Church, 300 Main Street, Windermere, FL
 
-As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting. or lipsum as it is sometimes known, is dummy text used in laying out print, grap or web designs. USA champions professionalism in the cleaning industry by providing top-quality cleaning and related services that meet and exceed the expectations of today’s demanding corporate.
+**Group Size:** 3-6 players maximum for maximum individual attention
+
+###### Training Benefits
+
+Small group training provides:
+
+- **Maximum Individual Attention:** More coaching time per player for personalized feedback
+- **Customized Development:** Sessions tailored to specific needs and skill gaps
+- **Competitive Environment:** Train with other serious players who elevate your game
+- **Accelerated Progress:** Faster skill development through intensive, focused training
+- **Direct Olympic-Level Coaching:** Learn directly from an elite international competitor
+
+###### Pricing
+
+**$150 per hour** for small group training (3-6 athletes)
+
+Limited availability. Contact us to discuss scheduling and reserve your spot in this premium training program.

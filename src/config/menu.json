@@ -1,20 +1,16 @@
 {
   "main": [
     {
-      "name": "About Us",
+      "name": "About",
       "url": "/about"
     },
     {
-      "name": "Services",
+      "name": "Programs",
       "url": "/services"
     },
     {
       "name": "Gallery",
       "url": "/gallery"
-    },
-    {
-      "name": "Blog",
-      "url": "/blog"
     },
     {
       "name": "Contact",
@@ -23,48 +19,48 @@
   ],
   "footer": [
     {
-      "title": "Company",
+      "title": "Quick Links",
       "children": [
         {
           "name": "Home",
           "url": "/"
         },
         {
-          "name": "Services",
-          "url": "/services"
-        },
-        {
-          "name": "About Us",
+          "name": "About Marcelinho",
           "url": "/about"
         },
         {
-          "name": "Elements",
-          "url": "/elements"
+          "name": "Training Programs",
+          "url": "/services"
         },
         {
-          "name": "Contacts",
+          "name": "Gallery",
+          "url": "/gallery"
+        },
+        {
+          "name": "Contact",
           "url": "/contact"
         }
       ]
     },
     {
-      "title": "Services",
+      "title": "Training Info",
       "children": [
         {
-          "name": "Home Cleaning",
-          "url": "/services/home-cleaning"
+          "name": "Group Training",
+          "url": "/services/group-training"
         },
         {
-          "name": "Window Cleaning",
-          "url": "/services/window-cleaning"
+          "name": "Small Group Training",
+          "url": "/services/small-group-training"
         },
         {
-          "name": "Pest Control",
-          "url": "/services/pest-control"
+          "name": "Schedule & Location",
+          "url": "/appointment"
         },
         {
-          "name": "Floor Cleaning",
-          "url": "/services/floor-cleaning"
+          "name": "Apply Now",
+          "url": "/appointment"
         }
       ]
     }

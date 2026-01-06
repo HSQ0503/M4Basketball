@@ -16,8 +16,8 @@ const Home = () => {
     <>
       <SeoMeta />
       <Hero />
-      <ServiceSection />
       <AboutSection />
+      <ServiceSection />
       <Responsibility />
       <CustomerSection />
       {testimonial.enable && (

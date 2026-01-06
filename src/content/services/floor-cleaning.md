@@ -1,13 +1,13 @@
 ---
-title: "Floor <br> Cleaning"
+title: "Future Program <br> TBD"
 meta_title: ""
-description: "this is meta descriptio"
+description: "Future training program"
 icon: "FaRegWindowMaximize"
 banner: "/images/service/6.png"
 date: 2025-04-04T05:00:00Z
-categories: ["Kitchen"]
+categories: ["Training"]
 weight: 4
-draft: false
+draft: true
 ---
 
 ### We give the best services

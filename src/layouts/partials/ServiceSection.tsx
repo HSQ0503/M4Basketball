@@ -6,7 +6,7 @@ import { Service } from "@/types";
 import React from "react";
 
 const ServiceSection = ({ hero }: { hero?: boolean }) => {
-  const { homepage_section_enable, subtitle, descriptions, title, home_title } =
+  const { homepage_section_enable, subtitle, descriptions, title, home_title, program_details } =
     getListPage("services/-index.md").frontmatter;
   const allServices = getSinglePage("services");
   return (
@@ -55,58 +55,29 @@ const ServiceSection = ({ hero }: { hero?: boolean }) => {
               </div>
 
               <div className="col-12">
-                <div className="flex flex-wrap justify-center md:justify-between items-center mt-10 lg:mt-16 max-lg:gap-10 gap-y-5">
-                  {allServices.map((service: Service, i: number) => (
-                    <React.Fragment key={i}>
-                      <div
-                        className="group"
-                        data-aos="fade-right-sm"
-                        data-aos-delay={100 + i * 50}
-                      >
-                        <div className="group-child">
-                          {service?.frontmatter?.icon && (
-                            <DynamicIcon
-                              icon={service?.frontmatter?.icon}
-                              className="mb-6 text-5xl p-2 rounded bg-secondary/70"
-                            />
-                          )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-10 mt-10 lg:mt-16">
+                  {program_details && program_details.map((detail: { name: string; icon: string; content: string }, i: number) => (
+                    <div
+                      key={`detail-${i}`}
+                      className="group"
+                      data-aos="fade-right-sm"
+                      data-aos-delay={100 + i * 50}
+                    >
+                      <div className="group-child">
+                        <DynamicIcon
+                          icon={detail.icon}
+                          className="mb-6 text-5xl p-2 rounded bg-secondary/70"
+                        />
 
-                          <p
-                            dangerouslySetInnerHTML={markdownify(
-                              service.frontmatter.title!,
-                            )}
-                            className="text-xl font-medium mb-3 leading-[33px] [&>br]:block w-fit"
-                          />
+                        <p className="text-xl font-medium mb-3 leading-[33px] w-fit">
+                          {detail.name}
+                        </p>
 
-                          <div className="relative overflow-hidden w-fit">
-                            <a
-                              href={`/services/${service.slug}`}
-                              className="font-medium text-nowrap inline-block group text-base-sm"
-                            >
-                              <span className="-translate-x-[86%] transform transition-transform duration-300 inline-flex items-center group-hover:translate-x-0">
-                                Discover More
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="w-4 h-4 ml-1"
-                                >
-                                  <line x1="5" y1="12" x2="19" y2="12" />
-                                  <polyline points="12 5 19 12 12 19" />
-                                </svg>
-                              </span>
-                            </a>
-                          </div>
-                        </div>
+                        <p className="text-base text-text/80">
+                          {detail.content}
+                        </p>
                       </div>
-                      {i !== allServices.length - 1 && (
-                        <hr className="w-30 hidden lg:block border-border rotate-90" />
-                      )}
-                    </React.Fragment>
+                    </div>
                   ))}
                 </div>
               </div>

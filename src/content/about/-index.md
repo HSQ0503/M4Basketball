@@ -1,54 +1,54 @@
 ---
-title: "We are a cleaning service <br> company with **expert team**"
-meta_title: ""
-description: "this is about page"
-subtitle: "ABOUT US"
+title: "Train with an Olympic <br> athlete with **elite credentials**"
+meta_title: "About Marcelinho Machado | Olympic Basketball Coach"
+description: "Learn about Marcelinho Machado - Olympic athlete, 7x Brazilian Champion, and elite basketball coach offering training in Orlando/Windermere, FL."
+subtitle: "ABOUT MARCELINHO"
 
 why_us:
-  - title: "You can depend on us <br> to get a **good services**"
-    content: "Our clinic provides a wide range of oral care services checkup to fitting braces. We use only advanced technologies to keep your smile looking the best."
+  - title: "Learn from an <br> **Olympic champion**"
+    content: "Marcelinho Machado competed in the 2012 London Olympics and played professionally in Brazil and Europe, including the EuroLeague. His elite experience translates into world-class coaching for serious players."
     button:
       enable: true
-      label: "Call: +1-394-495-5993"
-      link: "tel:+1-394-495-5993"
+      label: "Apply for Training"
+      link: "/appointment"
 
     image: "/images/about/1.png"
     overlay_image: "/images/about/overlay.png"
 
-  - title: "Your **happiness** is <br> our first priority"
+  - title: "Your **development** is <br> our first priority"
     subtitle: "WHY CHOOSE US"
     image: "/images/about/2.png"
     bullet_points:
-      - "Highly Rated & Esteemed"
-      - "We are Committed"
-      - "Fully Satisfaction Guarantee"
-      - "Insured and Branded"
-      - "Trusted Professionals"
+      - "Olympic Athlete Coaching"
+      - "Small Group Training (10-12 max)"
+      - "Basketball IQ Focused"
+      - "Mental Development Included"
+      - "Proven International Experience"
 
 pride:
-  title: "We are **recognized** award <br> winning company"
-  subtitle: "OUR PRIDE"
-  content: "Our clinic provides a wide range of oral care services, from checkups to fitting braces. We use only advanced technologies to keep your smile looking the best."
+  title: "**Elite accomplishments** <br> at the highest level"
+  subtitle: "CAREER HIGHLIGHTS"
+  content: "Marcelinho's career spans Olympic competition, multiple FIBA World Cups, Pan American Championships, and professional basketball at the highest levels in Brazil and Europe."
   images:
     - "/images/about/3.png"
     - "/images/about/4.png"
     - "/images/about/5.png"
 
 team:
-  enable: true
-  title: "We have the **best team** <br> to serve you"
-  subtitle: "OUR AWESOME TEAM"
+  enable: false
+  title: "Meet **the coach**"
+  subtitle: "MARCELINHO MACHADO"
   members:
-    - name: "Brandon Copperfield"
-      designation: "Cleaning Manager"
+    - name: "Marcelinho Machado"
+      designation: "Head Coach & Founder"
       image: "/images/about/member/1.png"
-    - name: "Jim Sochon"
-      designation: "Head in Plumbing"
+    - name: "Assistant Coach"
+      designation: "Coming Soon"
       image: "/images/about/member/3.png"
-    - name: "Ashley Hardy"
-      designation: "Cleaning Staff"
+    - name: "Skills Coach"
+      designation: "Coming Soon"
       image: "/images/about/member/2.png"
-    - name: "Barry Allen"
-      designation: "Cleaning Staff"
+    - name: "Trainer"
+      designation: "Coming Soon"
       image: "/images/about/member/4.png"
 ---

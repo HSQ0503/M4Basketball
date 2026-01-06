@@ -1,15 +1,15 @@
 ---
 enable: true
-title: "Discuss our services or <br> make an **appointment**"
-subtitle: "CONTACT US"
-content: "We know what a sore tooth is, so do not hesitate to reach <br> us via the phone or to make an appointment online! We <br> know what a sore."
+title: "Ready to train with an <br> **Olympic athlete?**"
+subtitle: "LIMITED SPOTS AVAILABLE"
+content: "Take your game to the next level with elite basketball <br> training. Only 10-12 spots available per group. Apply now <br> to reserve your position."
 image: "/images/cta.png"
 buttons:
   - enable: true
-    label: "Call: +1-394-495-5993"
-    link: "tel:+1-394-495-5993"
+    label: "Apply Now"
+    link: "/appointment"
 
   - enable: true
-    label: "Make An Appointment"
-    link: "appointment"
+    label: "Contact Us"
+    link: "/contact"
 ---

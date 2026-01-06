@@ -1,6 +1,6 @@
 ---
-title: "Read Our **Articles**"
-meta_title: ""
-description: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS is a long established fact that a reader."
-badge: "BLOG"
+title: "Basketball Training **Insights**"
+meta_title: "Training Tips & Basketball Insights | M4 Basketball"
+description: "Read expert basketball training tips, insights, and advice from Olympic athlete Marcelinho Machado. Learn about skill development, basketball IQ, and mental preparation."
+badge: "TRAINING TIPS"
 ---
