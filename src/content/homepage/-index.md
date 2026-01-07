@@ -56,13 +56,23 @@ responsibility:
 customer:
   enable: true
   title:
-    value: "10-12"
-    text: "Maximum Players Per Group"
-  logo:
-    - "/images/home/review/client/1.svg"
-    - "/images/home/review/client/2.svg"
-    - "/images/home/review/client/3.svg"
-    - "/images/home/review/client/4.svg"
+    value: "Elite **Career** Accomplishments"
+    text: "A Legacy of Excellence at the Highest Levels of International Basketball"
+  accomplishments:
+    - icon: "FaMedal"
+      text: "Olympian – London 2012"
+    - icon: "FaTrophy"
+      text: "Three-time Pan American Games Champion"
+    - icon: "FaEarthAmericas"
+      text: "Competed in five FIBA Basketball World Cups"
+    - icon: "FaAward"
+      text: "4th leading scorer at the 2002 FIBA Basketball World Cup"
+    - icon: "FaStar"
+      text: "MVP of the FIBA Americas Championship (AmeriCup) in 2005"
+    - icon: "FaCrown"
+      text: "Seven-time Brazilian National Champion"
+    - icon: "FaGlobe"
+      text: "Played in the EuroLeague in Europe"
 
 testimonial:
   enable: false

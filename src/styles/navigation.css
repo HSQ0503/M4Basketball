@@ -4,7 +4,7 @@
 
 /* navbar items */
 .navbar {
-  @apply py-2 relative flex flex-wrap items-center justify-between;
+  @apply py-1 md:py-2 relative flex flex-wrap items-center justify-between;
 }
 
 .navbar-brand {

@@ -157,3 +157,20 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* Hero background positioning - focus on basketball player on mobile */
+.hero-banner {
+  background-position: 85% center;
+}
+
+@media (min-width: 640px) {
+  .hero-banner {
+    background-position: 70% center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-banner {
+    background-position: center center;
+  }
+}

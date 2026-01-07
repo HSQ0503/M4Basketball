@@ -47,94 +47,154 @@ const Contact = async () => {
               >
                 <form action={contact_form_action} method="POST">
                   <div className="row">
-                    <div className="col-12">
+                    <div className="col-12 md:col-6">
                       <div
                         className="mb-6"
                         data-aos="fade-up-sm"
                         data-aos-delay="120"
                       >
                         <label htmlFor="f-name" className="form-label">
-                          {" "}
-                          First Name{" "}
+                          First Name <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="f-name"
                           name="f-name"
                           className="form-input"
-                          placeholder="Your First Name"
+                          placeholder="Player's First Name"
                           type="text"
                           required
                         />
                       </div>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 md:col-6">
                       <div
                         className="mb-6"
                         data-aos="fade-up-sm"
                         data-aos-delay="140"
                       >
                         <label htmlFor="l-name" className="form-label">
-                          {" "}
-                          Last Name{" "}
+                          Last Name <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="l-name"
                           name="l-name"
                           className="form-input"
-                          placeholder="Your Last Name"
+                          placeholder="Player's Last Name"
                           type="text"
                           required
                         />
                       </div>
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 md:col-6">
                       <div
                         className="mb-6"
                         data-aos="fade-up-sm"
                         data-aos-delay="160"
                       >
                         <label htmlFor="email" className="form-label">
-                          Email Address
+                          Email Address <span className="text-red-500">*</span>
                         </label>
                         <input
                           id="email"
                           name="email"
                           className="form-input"
-                          placeholder="Your Email Address"
+                          placeholder="your@email.com"
                           type="email"
                           required
                         />
+                      </div>
+                    </div>
+                    <div className="col-12 md:col-6">
+                      <div
+                        className="mb-6"
+                        data-aos="fade-up-sm"
+                        data-aos-delay="180"
+                      >
+                        <label htmlFor="phone" className="form-label">
+                          Phone Number <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          className="form-input"
+                          placeholder="(555) 123-4567"
+                          type="tel"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-12 md:col-6">
+                      <div
+                        className="mb-6"
+                        data-aos="fade-up-sm"
+                        data-aos-delay="200"
+                      >
+                        <label htmlFor="age" className="form-label">
+                          Player Age <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          id="age"
+                          name="age"
+                          className="form-input"
+                          placeholder="e.g., 13"
+                          type="number"
+                          min="11"
+                          max="16"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="col-12 md:col-6">
+                      <div
+                        className="mb-6"
+                        data-aos="fade-up-sm"
+                        data-aos-delay="220"
+                      >
+                        <label htmlFor="skill-level" className="form-label">
+                          Skill Level <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          id="skill-level"
+                          name="skill-level"
+                          className="form-input"
+                          required
+                        >
+                          <option value="">Select Skill Level</option>
+                          <option value="beginner">Beginner</option>
+                          <option value="intermediate">Intermediate</option>
+                          <option value="advanced">Advanced</option>
+                          <option value="high-level">High-Level Competitive</option>
+                        </select>
                       </div>
                     </div>
                     <div className="col-12">
                       <div
                         className="mb-6"
                         data-aos="fade-up-sm"
-                        data-aos-delay="180"
+                        data-aos-delay="240"
                       >
                         <label htmlFor="message" className="form-label">
-                          {" "}
-                          Message{" "}
+                          Additional Information
                         </label>
                         <textarea
                           id="message"
                           name="message"
                           className="form-input"
-                          placeholder="How can we help you?"
-                          rows={9}
-                          required
+                          placeholder="Tell us about your basketball goals, experience, or any questions you have..."
+                          rows={6}
                         ></textarea>
                       </div>
                     </div>
                     <div
-                      className="col"
+                      className="col-12"
                       data-aos="fade-up-sm"
-                      data-aos-delay="200"
+                      data-aos-delay="260"
                     >
                       <CustomButton
-                        label="Send A Message"
+                        label="Submit Inquiry"
                         variant="primary"
                         button_type="submit"
+                        className="w-full md:w-auto"
                       />
                     </div>
                   </div>

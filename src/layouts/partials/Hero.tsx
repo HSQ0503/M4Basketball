@@ -9,11 +9,9 @@ const Hero = () => {
 
   return (
     <section
-      className="section relative mb-22"
+      className="section relative mb-22 bg-cover bg-no-repeat hero-banner"
       style={{
         backgroundImage: `url('${hero.image}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       <div className="container pt-24 sm:pt-20 pb-[280px] lg:pb-[228px] relative z-20">

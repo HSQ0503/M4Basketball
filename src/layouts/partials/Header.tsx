@@ -92,9 +92,9 @@ const Header = () => {
       )}
 
       <header className="header z-50 absolute top-0">
-        <nav className="navbar mx-auto max-w-[1356px]! px-[30px]">
+        <nav className="navbar mx-auto max-w-[1356px]! px-4 md:px-[30px]">
           {/* logo  */}
-          <div className="order-0 flex items-center" data-aos="zoom-in" data-aos-delay="20">
+          <div className="order-0 flex items-center justify-start -ml-2 md:ml-0" data-aos="zoom-in" data-aos-delay="20">
             <Logo />
           </div>
           <div className="flex items-center gap-4.5">
