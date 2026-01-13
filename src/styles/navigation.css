@@ -1,10 +1,19 @@
 .header {
-  @apply w-full;
+  @apply w-full transition-all duration-300;
 }
 
 /* navbar items */
 .navbar {
-  @apply py-1 md:py-2 relative flex flex-wrap items-center justify-between;
+  @apply py-1 md:py-2 relative flex flex-wrap items-center justify-between transition-all duration-300;
+}
+
+/* Compact header when scrolled */
+.header-reveal .navbar {
+  @apply py-1;
+}
+
+.header-reveal .navbar-brand img {
+  @apply max-h-[60px] transition-all duration-300;
 }
 
 .navbar-brand {
@@ -19,11 +28,16 @@
 }
 
 .nav-link {
-  @apply text-text text-base hover:text-primary block transition p-3 lg:px-2 lg:py-3;
+  @apply text-text text-base hover:text-primary block transition-all duration-300 p-3 lg:px-2 lg:py-3;
 
   &.active {
     @apply text-primary;
   }
+}
+
+/* Compact nav links when scrolled */
+.header-reveal .nav-link {
+  @apply lg:py-2;
 }
 
 .nav-dropdown {

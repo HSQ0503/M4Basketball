@@ -43,13 +43,12 @@ const Header = () => {
         const currentScroll = window.scrollY;
         if (
           sticky_header &&
-          currentScroll > 300 &&
-          currentScroll > lastScroll &&
+          currentScroll > 100 &&
           header
         ) {
           header.classList.add("header-reveal");
           header.classList.remove("absolute");
-        } else if (currentScroll < 250 && header) {
+        } else if (currentScroll < 50 && header) {
           header.classList.remove("header-reveal");
           header.classList.add("absolute");
         }
