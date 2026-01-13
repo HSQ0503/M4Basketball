@@ -10,13 +10,13 @@ import ServiceSection from "@/partials/ServiceSection";
 import Testimonials from "@/partials/Testimonials";
 
 const Home = () => {
-  const { testimonial } = getListPage("homepage/-index.md").frontmatter;
+  const { testimonial, hero, about } = getListPage("homepage/-index.md").frontmatter;
 
   return (
     <>
       <SeoMeta />
-      <Hero />
-      <AboutSection />
+      <Hero hero={hero} />
+      <AboutSection about={about} />
       <ServiceSection />
       <Responsibility />
       <CustomerSection />

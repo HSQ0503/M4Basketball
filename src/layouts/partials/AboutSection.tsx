@@ -1,18 +1,57 @@
+"use client";
+
 import CustomButton from "@/components/CustomButton";
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
+import { useEffect, useState } from "react";
 
-const AboutSection = () => {
-  const { about } = getListPage("homepage/-index.md").frontmatter;
+interface AboutSectionProps {
+  about: {
+    enable: boolean;
+    title: string;
+    subtitle: string;
+    content: string;
+    schedule: { day: string; time: string }[];
+    button: { enable: boolean; link: string; label: string; icon?: string };
+    badge: string;
+    images: string[];
+    video?: { thumbnail: string; url: string };
+  };
+}
+
+const AboutSection = ({ about }: AboutSectionProps) => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isVideoOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVideoOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsVideoOpen(false);
+      }
+    };
+
+    if (isVideoOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isVideoOpen]);
 
   return (
     <>
       {about.enable && (
         <section className="section pt-0 lg:pb-44">
           <div className="container">
-            <div className="flex flex-col lg:flex-row justify-between gap-32 lg:gap-10 items-center">
+            <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-10 items-center">
               <div className="lg:w-[55%]">
                 <div className="relative">
                   <ImageFallback
@@ -32,16 +71,75 @@ const AboutSection = () => {
                     data_aos="zoom-in-sm"
                     data_aos_delay="20"
                   />
-                  <div data-aos="zoom-in-sm" data-aos-delay="40">
+                  {/* Spinning badge with video play button - Desktop */}
+                  <div 
+                    data-aos="zoom-in-sm" 
+                    data-aos-delay="40"
+                    className="hidden md:block absolute right-0 top-1/2 translate-y-[-80%] translate-x-[40%] w-[30%] cursor-pointer group"
+                    onClick={() => about.video && setIsVideoOpen(true)}
+                  >
+                    {/* Spinning badge */}
                     <ImageFallback
                       src={about.badge}
-                      alt={about.badge}
+                      alt="Olympic Athlete Training"
                       width={223}
                       height={223}
-                      className="hidden md:block absolute right-0 top-1/2 translate-y-[-140%] translate-x-[40%] spin-animation scale-80 w-[30%]"
+                      className="spin-animation scale-80 w-full"
                     />
+                    {/* Play button in center */}
+                    {about.video && (
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                        <svg
+                          className="w-16 h-16 md:w-20 md:h-20 text-secondary drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 124 124"
+                        >
+                          <circle cx="62" cy="62" r="62" fill="currentColor" />
+                          <path
+                            className="text-white"
+                            fill="currentColor"
+                            d="M71.692 61.948 57.32 52.153c-.536-.364-1.321-.036-1.321.551v19.592c0 .587.785.915 1.32.551l14.372-9.795c.41-.28.41-.823 0-1.104"
+                          />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 </div>
+                
+                {/* Mobile video play button */}
+                {about.video && (
+                  <div 
+                    className="md:hidden flex justify-center mt-8 cursor-pointer group"
+                    onClick={() => setIsVideoOpen(true)}
+                    data-aos="zoom-in-sm"
+                  >
+                    <div className="relative">
+                      <ImageFallback
+                        src={about.badge}
+                        alt="Olympic Athlete Training"
+                        width={150}
+                        height={150}
+                        className="spin-animation"
+                      />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                        <svg
+                          className="w-14 h-14 text-secondary drop-shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 124 124"
+                        >
+                          <circle cx="62" cy="62" r="62" fill="currentColor" />
+                          <path
+                            className="text-white"
+                            fill="currentColor"
+                            d="M71.692 61.948 57.32 52.153c-.536-.364-1.321-.036-1.321.551v19.592c0 .587.785.915 1.32.551l14.372-9.795c.41-.28.41-.823 0-1.104"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="lg:w-[33%]">
                 <p
@@ -84,7 +182,7 @@ const AboutSection = () => {
                     <CustomButton
                       link={about.button.link}
                       label={about.button.label}
-                      className="mt-8 btn-sm! sm:btn!"
+                      className="mt-8"
                       variant="secondary"
                       icon={about.button.icon}
                     />
@@ -94,6 +192,35 @@ const AboutSection = () => {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Video Modal */}
+      {isVideoOpen && about.video && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 transition-opacity duration-500 ease-in-out"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div
+            className="relative w-[90%] md:w-[80%] aspect-video max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute -top-10 right-0 text-white text-xl hover:text-primary transition-colors"
+              onClick={() => setIsVideoOpen(false)}
+            >
+              ✕ Close
+            </button>
+            <iframe
+              width="100%"
+              height="100%"
+              src={about.video.url}
+              title="Video"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className="rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+        </div>
       )}
     </>
   );

@@ -6,7 +6,7 @@ description: "Apply for elite basketball training with Olympic athlete Marcelinh
 contact_way:
   - name: "Phone Number"
     icon: "FaPhone"
-    value: "Contact Info TBD"
+    value: "(689) 327-9465"
   - name: "Location"
     icon: "FaLocationDot"
     value: "Family Church <br> 300 Main Street, Windermere, FL"
@@ -15,5 +15,5 @@ contact_way:
     value: "Jan-Feb: SAT 3-5 PM <br> March+: Weekdays (TBD)"
   - name: "Email"
     icon: "FaEnvelope"
-    value: "info@m4basketball.com"
+    value: "m4basket@gmail.com"
 ---

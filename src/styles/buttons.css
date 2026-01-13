@@ -3,7 +3,7 @@
 }
 
 .btn-secondary {
-  @apply bg-secondary text-text hover:bg-transparent! transition-colors! duration-10;
+  @apply bg-secondary text-white hover:bg-transparent! hover:text-text transition-colors! duration-10;
 }
 
 .btn-light {

@@ -1,19 +1,77 @@
+"use client";
+
 import CustomButton from "@/components/CustomButton";
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
-import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
+import { useEffect, useState } from "react";
 
-const Hero = () => {
-  const { hero } = getListPage("homepage/-index.md").frontmatter;
+interface HeroProps {
+  hero: {
+    title: string;
+    subtitle: string;
+    buttons: { enable: boolean; link: string; label: string; icon?: string }[];
+    images: string[];
+    mobileImages?: string[];
+    image?: string;
+    reviews: { company_logo: string; rating: number; name: string }[];
+  };
+}
+
+const Hero = ({ hero }: HeroProps) => {
+  const desktopImages = hero.images || [hero.image];
+  const mobileImages = hero.mobileImages || desktopImages;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Get current images based on screen size
+  const images = isMobile ? mobileImages : desktopImages;
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <section
-      className="section relative mb-22 bg-cover bg-no-repeat hero-banner"
-      style={{
-        backgroundImage: `url('${hero.image}')`,
-      }}
-    >
+    <section className="section relative mb-22 bg-cover bg-no-repeat hero-banner">
+      {/* Desktop rotating background images */}
+      {desktopImages.map((img, index) => (
+        <div
+          key={`desktop-${img}`}
+          className="hidden md:block absolute inset-0 bg-cover bg-no-repeat bg-center transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('${img}')`,
+            opacity: index === currentIndex ? 1 : 0,
+          }}
+        />
+      ))}
+      {/* Mobile rotating background images */}
+      {mobileImages.map((img, index) => (
+        <div
+          key={`mobile-${img}`}
+          className="md:hidden absolute inset-0 bg-cover bg-no-repeat bg-center transition-opacity duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('${img}')`,
+            opacity: index === currentIndex ? 1 : 0,
+          }}
+        />
+      ))}
       <div className="container pt-24 sm:pt-20 pb-[280px] lg:pb-[228px] relative z-20">
         <p
           dangerouslySetInnerHTML={markdownify(hero.subtitle)}
@@ -53,15 +111,15 @@ const Hero = () => {
 
       <div className="absolute z-30 bottom-1 left-0 w-full">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center lg:justify-start justify-center gap-14 py-10">
+          <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-14 py-10">
             {hero.reviews.map((r: { company_logo: string; rating: number; name: string }, i: number) => (
-              <div data-aos="fade-left-sm" data-aos-delay={80 + i * 50} key={i}>
+              <div data-aos="fade-left-sm" data-aos-delay={80 + i * 50} key={i} className="flex flex-col items-center">
                 <ImageFallback
                   src={r.company_logo}
                   alt={r.name}
                   width={185}
                   height={52}
-                  className="pb-5"
+                  className="pb-5 mx-auto"
                   data-aos="fade-up-sm"
                   data-aos-delay={100 + i * 50}
                 />
@@ -79,7 +137,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/* Bottom white section */}
       <div className="absolute -bottom-1 left-0 w-full lg:w-4/6 xl:w-1/2 min-h-[330px] md:min-h-[200px] bg-body z-20"></div>
+      {/* Gradient overlay */}
       <div
         className="absolute inset-0 w-[78%] h-full z-10 bg-gradient-to-r from-[#c1dce2] via-[#a6c9d3] to-transparent"
         data-aos="fade-right-sm"

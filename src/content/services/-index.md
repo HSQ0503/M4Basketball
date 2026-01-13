@@ -7,7 +7,7 @@ description: "Basketball training programs in Orlando focusing on fundamentals, 
 subtitle: "TRAINING PROGRAMS"
 descriptions:
   - "Our training focuses on developing complete basketball players through fundamentals, basketball IQ, decision-making, and mental development. Small groups ensure individual attention."
-  - "Year-round program with twice-weekly training sessions at Family Church in Windermere. Future phases include competition opportunities."
+  - "Year-round program with once-weekly training sessions at Family Church in Windermere. Future phases include competition opportunities."
 
 program_details:
   - name: "Location"
@@ -19,12 +19,43 @@ program_details:
   - name: "Pricing"
     icon: "FaDollarSign"
     content: "Group (up to 12): $80/hr | Small Group (3-6): $150/hr"
+    link: "/services#pricing"
   - name: "Commitment"
     icon: "FaCalendar"
-    content: "2x per week, year-round program"
-  - name: "Group Size"
+    content: "1x per week, year-round program"
+  - name: "Focus"
     icon: "FaPeopleGroup"
-    content: "Maximum 10-12 players per group for individual attention"
+    content: "Dedication and Attention to every player"
+
+pricing:
+  title: "Training **Pricing**"
+  subtitle: "INVESTMENT IN YOUR GAME"
+  description: "All prices are per person, per hour. Payments accepted via Zelle or Cash only."
+  options:
+    - name: "Small Group Training"
+      price: "$150"
+      per: "per person/hour"
+      max_size: "3-6 players maximum"
+      icon: "FaStar"
+      features:
+        - "Maximum personalized attention"
+        - "Highly focused coaching"
+        - "Direct feedback every drill"
+        - "Faster skill development"
+        - "Ideal for serious players"
+      description: "With fewer players, Marcelo dedicates significantly more attention to each individual. Every drill, every movement gets personal coaching and immediate feedback. This intensive focus accelerates development for players serious about reaching the next level."
+    - name: "Group Training"
+      price: "$80"
+      per: "per person/hour"
+      max_size: "Up to 12 players"
+      icon: "FaUsers"
+      features:
+        - "Quality coaching for all"
+        - "Team-based drills"
+        - "Competitive environment"
+        - "Great value option"
+        - "Build camaraderie"
+      description: "Marcelo still dedicates quality attention to every player, but with a larger group the focus is naturally spread among more athletes. This option provides excellent training at an accessible price point while developing teamwork skills."
 
 process:
   title: "Training philosophy developed <br> through **years of elite competition**"

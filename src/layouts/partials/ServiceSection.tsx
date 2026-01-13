@@ -56,7 +56,7 @@ const ServiceSection = ({ hero }: { hero?: boolean }) => {
 
               <div className="col-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-10 mt-10 lg:mt-16">
-                  {program_details && program_details.map((detail: { name: string; icon: string; content: string }, i: number) => (
+                  {program_details && program_details.map((detail: { name: string; icon: string; content: string; link?: string }, i: number) => (
                     <div
                       key={`detail-${i}`}
                       className="group"
@@ -76,6 +76,15 @@ const ServiceSection = ({ hero }: { hero?: boolean }) => {
                         <p className="text-base text-text/80">
                           {detail.content}
                         </p>
+
+                        {detail.link && (
+                          <a
+                            href={detail.link}
+                            className="inline-block mt-4 text-sm font-medium text-primary hover:text-secondary transition-colors"
+                          >
+                            Learn More →
+                          </a>
+                        )}
                       </div>
                     </div>
                   ))}

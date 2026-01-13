@@ -1,6 +1,6 @@
 ---
 hero:
-  title: "Elite **Basketball Training** <br> by Marcelo Machado"
+  title: "M4 **Basketball Training** <br> by Marcelo Machado"
   subtitle: "OLYMPIC ATHLETE • 7X BRAZILIAN CHAMPION • EUROleague PLAYER"
   buttons:
     - enable: true
@@ -10,9 +10,14 @@ hero:
     - enable: true
       label: "Contact Us"
       link: "/contact"
-  image: "/images/home/banner.png"
+  images:
+    - "/images/home/banner1.png"
+    - "/images/home/banner.png"
+  mobileImages:
+    - "/images/home/mobilebanner1.png"
+    - "/images/home/mobilebanner2.png"
   reviews:
-    - name: "EuroLeague Player"
+    - name: "7x Brazilian National Champion"
       company_logo: "/images/home/2.svg"
       rating: 5.0
     - name: "Olympic Athlete 2012"
@@ -24,11 +29,7 @@ about:
   title: "Who **am I?**"
   subtitle: "ABOUT MARCELINHO"
   content: "My mission is to help athletes reach the highest level of their performance while chasing their dreams through basketball. I focus not only on skill development, but also on the mental side of the game, confidence, decision-making, and work ethic."
-  schedule:
-    - day: Olympian
-      time: London 2012
-    - day: 7x Champion
-      time: Brazil
+  schedule: []
   button:
     enable: true
     label: "Learn More"
@@ -37,6 +38,9 @@ about:
   images:
     - "/images/home/about/1.avif"
     - "/images/home/about/2.avif"
+  video:
+    thumbnail: "/images/home/responsibility/thumb.webp"
+    url: "https://drive.google.com/file/d/1DfcuEeQdCppdqjbqR9d-DLuuQTBEv6bZ/preview"
 
 responsibility:
   enable: true
