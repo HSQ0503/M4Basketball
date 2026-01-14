@@ -58,6 +58,19 @@ const Responsibility = () => {
             </div>
           </div>
         </div>
+        <div
+          className="md:w-[40%] relative"
+          data-aos="zoom-in-sm"
+        >
+          <ImageFallback
+            src={responsibility.video?.thumbnail}
+            alt="video thumbnail"
+            width={300}
+            height={500}
+            className="max-md:aspect-video max-md:w-full md:size-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );
