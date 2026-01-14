@@ -1,6 +1,5 @@
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
-import VideoPlayer from "@/helpers/VideoPlayer";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -59,7 +58,6 @@ const Responsibility = () => {
             </div>
           </div>
         </div>
-        <VideoPlayer video={responsibility.video} />
       </div>
     </section>
   );
