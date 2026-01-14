@@ -7,6 +7,33 @@ import Providers from "@/partials/Providers";
 import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "aos/dist/aos.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: config.site.title,
+  description: config.metadata.meta_description,
+  authors: [{ name: config.metadata.meta_author }],
+  openGraph: {
+    title: config.site.title,
+    description: config.metadata.meta_description,
+    url: config.site.base_url,
+    siteName: config.site.title,
+    images: [
+      {
+        url: `${config.site.base_url}${config.metadata.meta_image}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: config.site.title,
+    description: config.metadata.meta_description,
+    images: [`${config.site.base_url}${config.metadata.meta_image}`],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -34,7 +61,7 @@ export default function RootLayout({
         {/* favicon */}
         <link rel="shortcut icon" href={config.site.favicon} />
         {/* theme meta */}
-        <meta name="theme-name" content="cleaner-nextjs" />
+        <meta name="theme-name" content="m4-basketball" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="theme-color"
