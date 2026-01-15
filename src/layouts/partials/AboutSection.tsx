@@ -49,7 +49,7 @@ const AboutSection = ({ about }: AboutSectionProps) => {
   return (
     <>
       {about.enable && (
-        <section className="section pt-0 lg:pb-44">
+        <section id="about" className="section pt-0 lg:pb-44">
           <div className="container">
             <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-10 items-center">
               <div className="lg:w-[55%]">

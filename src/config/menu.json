@@ -23,15 +23,11 @@
         },
         {
           "name": "About Marcelinho",
-          "url": "/about"
+          "url": "/#about"
         },
         {
           "name": "Training Programs",
           "url": "/services"
-        },
-        {
-          "name": "Gallery",
-          "url": "/gallery"
         },
         {
           "name": "Contact",
@@ -44,11 +40,11 @@
       "children": [
         {
           "name": "Group Training",
-          "url": "/services/group-training"
+          "url": "/services#pricing"
         },
         {
           "name": "Small Group Training",
-          "url": "/services/small-group-training"
+          "url": "/services#pricing"
         },
         {
           "name": "Schedule & Location",

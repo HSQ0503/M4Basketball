@@ -2,7 +2,6 @@
 
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import social from "@/config/social.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -56,13 +55,10 @@ const Footer = () => {
                   <ul>
                     {menu.children.map((child) => (
                       <li
-                        key={child.url}
+                        key={child.name}
                         className="mb-4 last:mb-0 text-text-light/80 text-base-sm hover:text-secondary hover:underline transition-all duration-300 ease-in-out"
                       >
-                        <a
-                          href={child.url}
-                          target={`${menu.title === "Social" ? "_blank" : "_self"}`}
-                        >
+                        <a href={child.url}>
                           {child.name}
                         </a>
                       </li>
@@ -70,25 +66,6 @@ const Footer = () => {
                   </ul>
                 </div>
               ))}
-              <div
-                className="col-6 md:col-3 pr-0"
-                data-aos="fade-up-sm"
-                data-aos-delay={50 + footer.length * 50}
-              >
-                <p className="mb-8 font-medium text-text-light">Social</p>
-                <ul>
-                  {social.main.map((social) => (
-                    <li
-                      key={social.link}
-                      className="mb-4 last:mb-0 text-text-light/80 text-base-sm hover:text-secondary hover:underline transition-all duration-300 ease-in-out"
-                    >
-                      <a href={social.link} target="_blank">
-                        {social.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
