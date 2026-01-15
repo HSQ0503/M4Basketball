@@ -7,10 +7,11 @@ type Props = {
   label: string;
   button_type?: "button" | "submit" | "reset";
   className?: string;
-  variant?: "primary" | "secondary" | "light";
+  variant?: "primary" | "secondary" | "light" | "outline";
   type?: string;
   data_aos?: string;
   data_aos_delay?: string | number;
+  disabled?: boolean;
 };
 
 const CustomButton = ({
@@ -23,14 +24,17 @@ const CustomButton = ({
   data_aos,
   data_aos_delay,
   type,
+  disabled,
 }: Props) => {
   const baseClasses = `relative overflow-hidden group ${type ? type : "btn"} ${className} ${
     variant === "secondary"
       ? "btn-secondary"
       : variant === "light"
         ? "btn-light"
-        : "btn-primary"
-  }`;
+        : variant === "outline"
+          ? "btn-outline"
+          : "btn-primary"
+  } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`;
 
   const hoverEffectClasses = `absolute w-full h-full -left-full -bottom-full rounded-full group-hover:-left-1 group-hover:-bottom-1 group-hover:w-[110%] group-hover:h-[110%] transition-all duration-[550ms] ${
     variant === "secondary"
@@ -64,6 +68,7 @@ const CustomButton = ({
           className={baseClasses}
           data-aos={data_aos}
           data-aos-delay={data_aos_delay}
+          disabled={disabled}
         >
           {icon && (
             <DynamicIcon
