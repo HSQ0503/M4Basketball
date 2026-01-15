@@ -32,8 +32,8 @@ about:
   schedule: []
   button:
     enable: true
-    label: "Learn More"
-    link: "/about"
+    label: "Book Lesson"
+    link: "/appointment"
   badge: "/images/home/about/badge.svg"
   images:
     - "/images/home/about/1.avif"
