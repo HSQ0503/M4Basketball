@@ -39,12 +39,12 @@
       "title": "Training Info",
       "children": [
         {
-          "name": "Group Training",
+          "name": "Training Plans",
           "url": "/services#pricing"
         },
         {
-          "name": "Small Group Training",
-          "url": "/services#pricing"
+          "name": "Training Groups",
+          "url": "/services#groups"
         },
         {
           "name": "Schedule & Location",

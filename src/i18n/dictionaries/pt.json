@@ -1,0 +1,118 @@
+{
+  "header": {
+    "menuOpen": "Abrir Menu",
+    "menuClose": "Fechar Menu"
+  },
+  "nav": {
+    "main": [
+      { "name": "Inscrição", "url": "/appointment" },
+      { "name": "Programas", "url": "/services" },
+      { "name": "Contato", "url": "/contact" }
+    ],
+    "buttonLabel": "Inscreva-se",
+    "buttonLink": "/appointment"
+  },
+  "footer": {
+    "description": "Treinamento de basquete de elite com o <br> atleta olímpico Marcelinho Machado em Orlando.",
+    "copyright": "&copy; 2025 Marcelinho Machado Basketball Training. Todos os Direitos Reservados",
+    "sections": [
+      {
+        "title": "Links Rápidos",
+        "children": [
+          { "name": "Início", "url": "/" },
+          { "name": "Sobre Marcelinho", "url": "/#about" },
+          { "name": "Programas de Treino", "url": "/services" },
+          { "name": "Contato", "url": "/contact" }
+        ]
+      },
+      {
+        "title": "Informações de Treino",
+        "children": [
+          { "name": "Planos de Treinamento", "url": "/services#pricing" },
+          { "name": "Grupos de Treinamento", "url": "/services#groups" },
+          { "name": "Horário e Local", "url": "/appointment" },
+          { "name": "Inscreva-se", "url": "/appointment" }
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "heading": "Página não encontrada",
+    "description": "A página que você está procurando pode ter sido removida, teve seu nome alterado ou está temporariamente indisponível.",
+    "backHome": "Voltar ao início"
+  },
+  "appointmentForm": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "firstNamePlaceholder": "Nome do Jogador",
+    "lastNamePlaceholder": "Sobrenome do Jogador",
+    "email": "Endereço de Email",
+    "emailPlaceholder": "seu@email.com",
+    "phone": "Número de Telefone",
+    "phonePlaceholder": "(555) 123-4567",
+    "playerAge": "Idade do Jogador",
+    "agePlaceholder": "ex: 13",
+    "skillLevel": "Nível de Habilidade",
+    "selectSkillLevel": "Selecione o Nível",
+    "beginner": "Iniciante",
+    "intermediate": "Intermediário",
+    "advanced": "Avançado",
+    "highLevel": "Alto Nível Competitivo",
+    "additionalInfo": "Informações Adicionais",
+    "messagePlaceholder": "Conte-nos sobre seus objetivos no basquete, experiência anterior de treinamento ou quaisquer perguntas...",
+    "submitting": "Enviando...",
+    "submitApplication": "Enviar Inscrição",
+    "failedSubmit": "Falha ao enviar inscrição",
+    "required": "*"
+  },
+  "appointmentPage": {
+    "contactDirectly": "Entre em contato diretamente"
+  },
+  "appointmentSuccess": {
+    "seoTitle": "Inscrição Enviada | M4 Basketball Training",
+    "seoDescription": "Obrigado pela sua inscrição. Entraremos em contato em breve.",
+    "heading": "Inscrição **Enviada!**",
+    "thankYou": "Obrigado pelo seu interesse no M4 Basketball Training. Recebemos sua inscrição e a analisaremos em breve.",
+    "nextSteps": "O treinador Marcelinho ou um membro da nossa equipe entrará em contato em 24-48 horas para discutir os próximos passos.",
+    "backHome": "Voltar ao Início",
+    "learnAbout": "Conheça Nosso Treinamento"
+  },
+  "blog": {
+    "readMore": "Leia mais artigos",
+    "readAll": "Ver Todos os Artigos"
+  },
+  "services": {
+    "serviceLabel": "Serviço",
+    "moreServices": "Mais serviços",
+    "learnMore": "Saiba Mais \u2192"
+  },
+  "pricing": {
+    "recommended": "Recomendado",
+    "paymentMethods": "Métodos de Pagamento",
+    "paymentDescription": "Aceitamos apenas pagamentos via <strong>Zelle</strong> e <strong>Dinheiro</strong>. O pagamento mensal deve ser feito antes da primeira sessão de cada mês."
+  },
+  "contact": {
+    "howToSignUp": "Como se Inscrever",
+    "signUpDescription": "Para se inscrever no treinamento, entre em contato com Marcelo diretamente por telefone ou email. Ele responderá com mais informações sobre disponibilidade, horários e próximos passos.",
+    "phone": "Telefone",
+    "email": "Email",
+    "notePrefix": "Nota:",
+    "noteText": "Marcelo responde pessoalmente todas as consultas. Por favor, aguarde 24-48 horas para uma resposta."
+  },
+  "about": {
+    "closeVideo": "\u2715 Fechar"
+  },
+  "notification": {
+    "message": "Vagas limitadas!",
+    "label": "Reserve Sua Vaga Agora"
+  },
+  "languageToggle": {
+    "switchTo": "EN",
+    "label": "English"
+  },
+  "metadata": {
+    "title": "Marcelinho Machado Treinamento de Basquete | Treinamento de Elite",
+    "description": "Treinamento de basquete de elite em Orlando com o atleta olímpico Marcelinho Machado. Vagas limitadas para jovens jogadores sérios de 11-16 anos. Foco em QI de basquete, habilidades e desenvolvimento mental."
+  }
+}

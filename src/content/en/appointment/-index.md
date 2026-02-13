@@ -1,0 +1,19 @@
+---
+title: "Apply for <br> **training**"
+subtitle: "RESERVE YOUR SPOT"
+meta_title: "Apply Now | M4 Basketball Training"
+description: "Apply for elite basketball training with Olympic athlete Marcelinho Machado. Limited spots available for ages 11-16 in Orlando/Windermere."
+contact_way:
+  - name: "Phone Number"
+    icon: "FaPhone"
+    value: "(689) 327-9465"
+  - name: "Location"
+    icon: "FaLocationDot"
+    value: "Family Church <br> 300 Main Street, Windermere, FL"
+  - name: "Schedule"
+    icon: "FaClock"
+    value: "Monday, Tuesday & Friday"
+  - name: "Email"
+    icon: "FaEnvelope"
+    value: "m4basket@gmail.com"
+---

@@ -1,0 +1,118 @@
+{
+  "header": {
+    "menuOpen": "Menu Open",
+    "menuClose": "Menu Close"
+  },
+  "nav": {
+    "main": [
+      { "name": "Appointment", "url": "/appointment" },
+      { "name": "Programs", "url": "/services" },
+      { "name": "Contact", "url": "/contact" }
+    ],
+    "buttonLabel": "Apply Now",
+    "buttonLink": "/appointment"
+  },
+  "footer": {
+    "description": "Elite basketball training from Olympic <br> athlete Marcelinho Machado in Orlando.",
+    "copyright": "&copy; 2025 Marcelinho Machado Basketball Training. All Rights Reserved",
+    "sections": [
+      {
+        "title": "Quick Links",
+        "children": [
+          { "name": "Home", "url": "/" },
+          { "name": "About Marcelinho", "url": "/#about" },
+          { "name": "Training Programs", "url": "/services" },
+          { "name": "Contact", "url": "/contact" }
+        ]
+      },
+      {
+        "title": "Training Info",
+        "children": [
+          { "name": "Training Plans", "url": "/services#pricing" },
+          { "name": "Training Groups", "url": "/services#groups" },
+          { "name": "Schedule & Location", "url": "/appointment" },
+          { "name": "Apply Now", "url": "/appointment" }
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "heading": "Page not found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backHome": "Back to home"
+  },
+  "appointmentForm": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "firstNamePlaceholder": "Player's First Name",
+    "lastNamePlaceholder": "Player's Last Name",
+    "email": "Email Address",
+    "emailPlaceholder": "your@email.com",
+    "phone": "Phone Number",
+    "phonePlaceholder": "(555) 123-4567",
+    "playerAge": "Player Age",
+    "agePlaceholder": "e.g., 13",
+    "skillLevel": "Skill Level",
+    "selectSkillLevel": "Select Skill Level",
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced",
+    "highLevel": "High-Level Competitive",
+    "additionalInfo": "Additional Information",
+    "messagePlaceholder": "Tell us about your basketball goals, previous training experience, or any questions...",
+    "submitting": "Submitting...",
+    "submitApplication": "Submit Application",
+    "failedSubmit": "Failed to submit application",
+    "required": "*"
+  },
+  "appointmentPage": {
+    "contactDirectly": "Contact us directly"
+  },
+  "appointmentSuccess": {
+    "seoTitle": "Application Submitted | M4 Basketball Training",
+    "seoDescription": "Thank you for your application. We will be in touch soon.",
+    "heading": "Application **Submitted!**",
+    "thankYou": "Thank you for your interest in M4 Basketball Training. We have received your application and will review it shortly.",
+    "nextSteps": "Coach Marcelinho or a member of our team will contact you within 24-48 hours to discuss the next steps.",
+    "backHome": "Back to Home",
+    "learnAbout": "Learn About Our Training"
+  },
+  "blog": {
+    "readMore": "Read more articles",
+    "readAll": "Read All Articles"
+  },
+  "services": {
+    "serviceLabel": "Service",
+    "moreServices": "More services",
+    "learnMore": "Learn More \u2192"
+  },
+  "pricing": {
+    "recommended": "Recommended",
+    "paymentMethods": "Payment Methods",
+    "paymentDescription": "We accept <strong>Zelle</strong> and <strong>Cash</strong> payments only. Monthly payment is due before the first session of each month."
+  },
+  "contact": {
+    "howToSignUp": "How to Sign Up",
+    "signUpDescription": "To sign up for training, please contact Marcelo directly via phone or email. He will get back to you with more information about availability, scheduling, and next steps.",
+    "phone": "Phone",
+    "email": "Email",
+    "notePrefix": "Note:",
+    "noteText": "Marcelo personally responds to all inquiries. Please allow 24-48 hours for a response."
+  },
+  "about": {
+    "closeVideo": "\u2715 Close"
+  },
+  "notification": {
+    "message": "Limited spots available!",
+    "label": "Reserve Your Spot Now"
+  },
+  "languageToggle": {
+    "switchTo": "PT",
+    "label": "Portugu\u00eas"
+  },
+  "metadata": {
+    "title": "Marcelinho Machado Basketball Training | Elite Basketball Coaching",
+    "description": "Elite basketball training in Orlando from Olympic athlete Marcelinho Machado. Limited spots for serious youth players ages 11-16. Focus on basketball IQ, skills, and mental development."
+  }
+}
