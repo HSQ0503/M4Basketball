@@ -1,5 +1,6 @@
 import MDXContent from "@/helpers/MDXContent";
 import { getSinglePage } from "@/lib/contentParser";
+import { getLocale } from "@/lib/getLocale";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
@@ -22,6 +23,7 @@ export const generateStaticParams = () => {
 const RegularPages = async (props: {
   params: Promise<{ regular: string }>;
 }) => {
+  const locale = await getLocale();
   const params = await props.params;
   const regularData = getSinglePage("pages");
   const data = regularData.filter(
@@ -52,7 +54,7 @@ const RegularPages = async (props: {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction locale={locale} />
     </>
   );
 };

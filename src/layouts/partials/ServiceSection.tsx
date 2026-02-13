@@ -1,13 +1,14 @@
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
+import type { Locale } from "@/i18n/config";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Service } from "@/types";
 import React from "react";
 
-const ServiceSection = ({ hero }: { hero?: boolean }) => {
+const ServiceSection = ({ hero, locale }: { hero?: boolean; locale?: Locale }) => {
   const { homepage_section_enable, subtitle, descriptions, title, home_title, program_details } =
-    getListPage("services/-index.md").frontmatter;
+    getListPage("services/-index.md", locale).frontmatter;
   const allServices = getSinglePage("services");
   return (
     <>

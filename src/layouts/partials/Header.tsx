@@ -1,12 +1,13 @@
 "use client";
 
 import CustomButton from "@/components/CustomButton";
+import LanguageToggle from "@/components/LanguageToggle";
 import Logo from "@/components/Logo";
 import NavDropDown from "@/components/NavDropDown";
 import config from "@/config/config.json";
-import menu from "@/config/menu.json";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import { markdownify } from "@/lib/utils/textConverter";
+import type { Dictionary } from "@/i18n/getDictionary";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
@@ -21,9 +22,14 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
-const Header = () => {
-  const { main }: { main: NavigationLink[] } = menu;
-  const { navigation_button, notification } = config;
+const Header = ({ dict }: { dict: Dictionary }) => {
+  const navItems = dict.nav.main;
+  const { notification: notificationConfig } = config;
+  const navigation_button = {
+    enable: config.navigation_button.enable,
+    label: dict.nav.buttonLabel,
+    link: dict.nav.buttonLink,
+  };
   const sticky_header = config.settings?.sticky_header;
 
   // get current path
@@ -70,22 +76,22 @@ const Header = () => {
 
   return (
     <>
-      {notification.enable && (
+      {notificationConfig.enable && (
         <div
           className="absolute top-0 z-20 flex flex-col sm:flex-row justify-center items-center gap-4.5 w-full bg-primary py-2"
           data-aos="fade-down-sm"
         >
           <p
             className="text-text-light/80 text-base-sm"
-            dangerouslySetInnerHTML={markdownify(notification.message)}
+            dangerouslySetInnerHTML={markdownify(dict.notification.message)}
           />
 
           <a
-            href={notification.link}
+            href={notificationConfig.link}
             className="text-text-light flex items-center"
           >
-            <DynamicIcon icon={notification.icon} className="mr-2.5" />
-            {notification.label}
+            <DynamicIcon icon={notificationConfig.icon} className="mr-2.5" />
+            {dict.notification.label}
           </a>
         </div>
       )}
@@ -136,37 +142,35 @@ const Header = () => {
 
             {/* /navbar toggler  */}
             <ul id="nav-menu" className="navbar-nav">
-              {main.map((menu, i: number) => (
-                <React.Fragment key={i}>
-                  {menu.hasChildren ? (
-                    <NavDropDown menu={menu} pathname={pathname} />
-                  ) : (
-                    <li
-                      className="nav-item"
-                      data-aos="fade-up-sm"
-                      data-aos-delay={100 + i * 50}
-                    >
-                      <a
-                        href={menu.url}
-                        className={`nav-link text-base-sm ${(pathname === `${menu.url}/` || pathname === menu.url) && "active"}`}
-                      >
-                        {menu.name}
-                      </a>
-                    </li>
-                  )}
-                </React.Fragment>
+              {navItems.map((item, i: number) => (
+                <li
+                  key={i}
+                  className="nav-item"
+                  data-aos="fade-up-sm"
+                  data-aos-delay={100 + i * 50}
+                >
+                  <a
+                    href={item.url}
+                    className={`nav-link text-base-sm ${(pathname === `${item.url}/` || pathname === item.url) && "active"}`}
+                  >
+                    {item.name}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-          {navigation_button.enable && (
-            <CustomButton
-              link={navigation_button.link}
-              label={navigation_button.label}
-              type="btn-sm"
-              className="order-1 hidden lg:inline-block!"
-              data_aos="zoom-in-sm"
-            />
-          )}
+          <div className="flex items-center gap-3 order-1">
+            <LanguageToggle />
+            {navigation_button.enable && (
+              <CustomButton
+                link={navigation_button.link}
+                label={navigation_button.label}
+                type="btn-sm"
+                className="hidden lg:inline-block!"
+                data_aos="zoom-in-sm"
+              />
+            )}
+          </div>
         </nav>
       </header>
     </>

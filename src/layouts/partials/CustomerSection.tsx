@@ -1,10 +1,11 @@
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
+import type { Locale } from "@/i18n/config";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const CustomerSection = () => {
-  const { customer } = getListPage("homepage/-index.md").frontmatter;
+const CustomerSection = ({ locale }: { locale?: Locale }) => {
+  const { customer } = getListPage("homepage/-index.md", locale).frontmatter;
   return (
     <>
       {customer.enable && (

@@ -1,6 +1,8 @@
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
+import { getDictionary } from "@/i18n/getDictionary";
+import { getLocale } from "@/lib/getLocale";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
@@ -35,16 +37,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+
   // import google font css
   const pf = theme.fonts.font_family.primary;
 
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning={true} lang={locale}>
       {/* google tag manager */}
       {config.google_tag_manager.enable && (
         <GoogleTagManager gtmId={config.google_tag_manager.gtm_id} />
@@ -90,9 +95,9 @@ export default function RootLayout({
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
         <Providers>
-          <Header />
+          <Header dict={dict} />
           <main>{children}</main>
-          <Footer />
+          <Footer dict={dict} />
         </Providers>
       </body>
     </html>

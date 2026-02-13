@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import CustomButton from "@/components/CustomButton";
+import type { Dictionary } from "@/i18n/getDictionary";
 
 interface FormData {
   firstName: string;
@@ -14,10 +15,11 @@ interface FormData {
   message: string;
 }
 
-const AppointmentForm = () => {
+const AppointmentForm = ({ dict }: { dict: Dictionary }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const t = dict.appointmentForm;
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -63,7 +65,7 @@ const AppointmentForm = () => {
       router.push("/appointment/success");
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Failed to submit application",
+        err instanceof Error ? err.message : t.failedSubmit,
       );
       setIsSubmitting(false);
     }
@@ -75,13 +77,13 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="120">
             <label htmlFor="firstName" className="form-label">
-              First Name <span className="text-red-500">*</span>
+              {t.firstName} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               id="firstName"
               name="firstName"
               className="form-input"
-              placeholder="Player's First Name"
+              placeholder={t.firstNamePlaceholder}
               type="text"
               required
               value={formData.firstName}
@@ -93,13 +95,13 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="140">
             <label htmlFor="lastName" className="form-label">
-              Last Name <span className="text-red-500">*</span>
+              {t.lastName} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               id="lastName"
               name="lastName"
               className="form-input"
-              placeholder="Player's Last Name"
+              placeholder={t.lastNamePlaceholder}
               type="text"
               required
               value={formData.lastName}
@@ -111,13 +113,13 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="160">
             <label htmlFor="email" className="form-label">
-              Email Address <span className="text-red-500">*</span>
+              {t.email} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               id="email"
               name="email"
               className="form-input"
-              placeholder="your@email.com"
+              placeholder={t.emailPlaceholder}
               type="email"
               required
               value={formData.email}
@@ -129,13 +131,13 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="180">
             <label htmlFor="phone" className="form-label">
-              Phone Number <span className="text-red-500">*</span>
+              {t.phone} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               id="phone"
               name="phone"
               className="form-input"
-              placeholder="(555) 123-4567"
+              placeholder={t.phonePlaceholder}
               type="tel"
               required
               value={formData.phone}
@@ -147,13 +149,13 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="200">
             <label htmlFor="age" className="form-label">
-              Player Age <span className="text-red-500">*</span>
+              {t.playerAge} <span className="text-red-500">{t.required}</span>
             </label>
             <input
               id="age"
               name="age"
               className="form-input"
-              placeholder="e.g., 13"
+              placeholder={t.agePlaceholder}
               type="number"
               min="11"
               max="16"
@@ -167,7 +169,7 @@ const AppointmentForm = () => {
         <div className="col-12 md:col-6">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="220">
             <label htmlFor="skillLevel" className="form-label">
-              Skill Level <span className="text-red-500">*</span>
+              {t.skillLevel} <span className="text-red-500">{t.required}</span>
             </label>
             <select
               id="skillLevel"
@@ -178,24 +180,24 @@ const AppointmentForm = () => {
               onChange={handleChange}
               disabled={isSubmitting}
             >
-              <option value="">Select Skill Level</option>
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-              <option value="high-level">High-Level Competitive</option>
+              <option value="">{t.selectSkillLevel}</option>
+              <option value="beginner">{t.beginner}</option>
+              <option value="intermediate">{t.intermediate}</option>
+              <option value="advanced">{t.advanced}</option>
+              <option value="high-level">{t.highLevel}</option>
             </select>
           </div>
         </div>
         <div className="col-12">
           <div className="mb-6" data-aos="fade-up-sm" data-aos-delay="240">
             <label htmlFor="message" className="form-label">
-              Additional Information
+              {t.additionalInfo}
             </label>
             <textarea
               id="message"
               name="message"
               className="form-input"
-              placeholder="Tell us about your basketball goals, previous training experience, or any questions..."
+              placeholder={t.messagePlaceholder}
               rows={6}
               value={formData.message}
               onChange={handleChange}
@@ -212,7 +214,7 @@ const AppointmentForm = () => {
 
         <div className="col-12" data-aos="fade-up-sm" data-aos-delay="260">
           <CustomButton
-            label={isSubmitting ? "Submitting..." : "Submit Application"}
+            label={isSubmitting ? t.submitting : t.submitApplication}
             variant="primary"
             button_type="submit"
             className="w-full md:w-auto"

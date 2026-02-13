@@ -1,12 +1,16 @@
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import ImageFallback from "@/helpers/ImageFallback";
+import { getDictionary } from "@/i18n/getDictionary";
 import { getListPage } from "@/lib/contentParser";
+import { getLocale } from "@/lib/getLocale";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 
 const Contact = async () => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
   const { title, description, meta_title, image, subtitle } =
     getListPage("contact/-index.md").frontmatter;
 
@@ -44,16 +48,15 @@ const Contact = async () => {
                 data-aos-delay="100"
               >
                 <h3 className="h4 mb-6" data-aos="fade-up-sm" data-aos-delay="120">
-                  How to Sign Up
+                  {dict.contact.howToSignUp}
                 </h3>
                 <p className="text-lg mb-8" data-aos="fade-up-sm" data-aos-delay="140">
-                  To sign up for training, please contact Marcelo directly via phone or email. 
-                  He will get back to you with more information about availability, scheduling, and next steps.
+                  {dict.contact.signUpDescription}
                 </p>
 
                 {/* Contact Information */}
                 <div className="space-y-6">
-                  <div 
+                  <div
                     className="flex items-start gap-4"
                     data-aos="fade-up-sm"
                     data-aos-delay="160"
@@ -62,8 +65,8 @@ const Contact = async () => {
                       <DynamicIcon icon="FaPhone" className="text-white text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-1">Phone</h4>
-                      <a 
+                      <h4 className="font-semibold text-lg mb-1">{dict.contact.phone}</h4>
+                      <a
                         href="tel:6893279465"
                         className="text-xl text-primary hover:underline"
                       >
@@ -72,7 +75,7 @@ const Contact = async () => {
                     </div>
                   </div>
 
-                  <div 
+                  <div
                     className="flex items-start gap-4"
                     data-aos="fade-up-sm"
                     data-aos-delay="180"
@@ -81,8 +84,8 @@ const Contact = async () => {
                       <DynamicIcon icon="FaEnvelope" className="text-white text-xl" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-1">Email</h4>
-                      <a 
+                      <h4 className="font-semibold text-lg mb-1">{dict.contact.email}</h4>
+                      <a
                         href="mailto:m4basket@gmail.com"
                         className="text-xl text-primary hover:underline break-all"
                       >
@@ -92,14 +95,13 @@ const Contact = async () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="mt-8 p-6 bg-body border-l-4 border-primary"
                   data-aos="fade-up-sm"
                   data-aos-delay="200"
                 >
                   <p className="text-base text-text/80">
-                    <strong>Note:</strong> Marcelo personally responds to all inquiries. 
-                    Please allow 24-48 hours for a response.
+                    <strong>{dict.contact.notePrefix}</strong> {dict.contact.noteText}
                   </p>
                 </div>
               </div>
@@ -121,7 +123,7 @@ const Contact = async () => {
           </div>
         </div>
       </section>
-      <CallToAction />
+      <CallToAction locale={locale} />
     </>
   );
 };

@@ -1,13 +1,12 @@
 "use client";
 
 import config from "@/config/config.json";
-import menu from "@/config/menu.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import { markdownify } from "@/lib/utils/textConverter";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-const Footer = () => {
-  const { copyright, footer_description } = config.params;
-  const { footer } = menu;
+const Footer = ({ dict }: { dict: Dictionary }) => {
+  const { copyright, description: footerDescription, sections } = dict.footer;
 
   return (
     <footer className="section lg:py-[135px] bg-text">
@@ -27,7 +26,7 @@ const Footer = () => {
 
                 <p
                   className="text-base-sm text-text-light/60"
-                  dangerouslySetInnerHTML={markdownify(footer_description)}
+                  dangerouslySetInnerHTML={markdownify(footerDescription)}
                   data-aos="fade-up-sm"
                   data-aos-delay="100"
                 />
@@ -42,7 +41,7 @@ const Footer = () => {
           </div>
           <div className="col-12 lg:col-6">
             <div className="row max-md:gy-5 justify-between">
-              {footer.map((menu, index) => (
+              {sections.map((section, index) => (
                 <div
                   key={index}
                   className="col-6 md:col-3 pr-0"
@@ -50,10 +49,10 @@ const Footer = () => {
                   data-aos-delay={50 + index * 50}
                 >
                   <p className="mb-8 font-medium text-text-light">
-                    {menu.title}
+                    {section.title}
                   </p>
                   <ul>
-                    {menu.children.map((child) => (
+                    {section.children.map((child) => (
                       <li
                         key={child.name}
                         className="mb-4 last:mb-0 text-text-light/80 text-base-sm hover:text-secondary hover:underline transition-all duration-300 ease-in-out"

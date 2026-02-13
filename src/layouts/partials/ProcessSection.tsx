@@ -1,10 +1,11 @@
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
+import type { Locale } from "@/i18n/config";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const ProcessSection = () => {
-  const { process } = getListPage("services/-index.md").frontmatter;
+const ProcessSection = ({ locale }: { locale?: Locale }) => {
+  const { process } = getListPage("services/-index.md", locale).frontmatter;
   return (
     <>
       <section className="section bg-light">

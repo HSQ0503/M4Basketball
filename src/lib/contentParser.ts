@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import path from "path";
+import type { Locale } from "@/i18n/config";
 
 const contentPath = "src/content";
 
@@ -17,7 +18,20 @@ const parseFrontmatter = (frontmatter: any) => {
 };
 
 // get list page data, ex: _index.md
-export const getListPage = (filePath: string) => {
+// When locale is provided, tries src/content/{locale}/{filePath} first, then falls back
+export const getListPage = (filePath: string, locale?: Locale) => {
+  if (locale) {
+    const localizedPath = path.join(contentPath, locale, filePath);
+    if (fs.existsSync(localizedPath)) {
+      const pageData = readFile(localizedPath);
+      const { content, data: frontmatter } = matter(pageData);
+      return {
+        frontmatter: parseFrontmatter(frontmatter),
+        content,
+      };
+    }
+  }
+
   const pageDataPath = path.join(contentPath, filePath);
 
   if (!fs.existsSync(pageDataPath)) {

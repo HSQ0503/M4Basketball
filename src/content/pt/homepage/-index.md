@@ -17,7 +17,7 @@ hero:
     - "/images/home/mobilebanner1.png"
     - "/images/home/mobilebanner2.png"
   reviews:
-    - name: "7x Campeão Nacional Brasileiro"
+    - name: "3x Medalhista de Ouro dos Jogos Pan-Americanos"
       company_logo: "/images/home/2.svg"
       rating: 5.0
     - name: "Atleta Olímpico 2012"

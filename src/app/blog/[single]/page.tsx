@@ -2,7 +2,9 @@ import BlogCard from "@/components/BlogCard";
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";
+import { getDictionary } from "@/i18n/getDictionary";
 import { getSinglePage } from "@/lib/contentParser";
+import { getLocale } from "@/lib/getLocale";
 import dateFormat from "@/lib/utils/dateFormat";
 import similarItems from "@/lib/utils/similarItems";
 import { humanize } from "@/lib/utils/textConverter";
@@ -25,6 +27,8 @@ export const generateStaticParams: () => { single: string }[] = () => {
 };
 
 const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
   const params = await props.params;
   const posts: Post[] = getSinglePage("blog");
   const post = posts.filter((page: Post) => page.slug === params.single)[0];
@@ -94,7 +98,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
                   className="text-h3 md:text-h2 mb-16 text-center"
                   data-aos="fade-up-sm"
                 >
-                  Read more articles
+                  {dict.blog.readMore}
                 </h2>
                 <div className="row justify-center g-5">
                   {similarPosts.slice(0, 3).map((post: Post, i: number) => (
@@ -113,7 +117,7 @@ const PostSingle = async (props: { params: Promise<{ single: string }> }) => {
           </>
         )}
       </>
-      <CallToAction />
+      <CallToAction locale={locale} />
     </>
   );
 };

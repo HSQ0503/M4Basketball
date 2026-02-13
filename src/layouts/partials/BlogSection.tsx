@@ -1,14 +1,17 @@
 import BlogCard from "@/components/BlogCard";
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/getDictionary";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Post } from "@/types";
 import Link from "next/link";
 
-const BlogSection = () => {
+const BlogSection = ({ locale }: { locale?: Locale }) => {
   const allPosts = getSinglePage("blog");
-  const { blog } = getListPage("homepage/-index.md").frontmatter;
+  const { blog } = getListPage("homepage/-index.md", locale).frontmatter;
+  const dict = locale ? getDictionary(locale) : null;
   return (
     <>
       {blog.enable && (
@@ -47,7 +50,7 @@ const BlogSection = () => {
                 data-aos="fade-up-sm"
                 data-aos-delay="150"
               >
-                Read All Articles
+                {dict?.blog?.readAll ?? "Read All Articles"}
                 <DynamicIcon
                   icon="FaArrowRightLong"
                   className="inline-block ml-2.5 text-center mx-auto"

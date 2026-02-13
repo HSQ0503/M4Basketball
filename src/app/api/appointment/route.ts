@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "M4 Basketball <noreply@m4basketball.com>",
-      to: ["m4basket@gmail.com"],
+      to: ["m4basket@gmail.com", "hsq0503@gmail.com"],
       replyTo: email,
       subject: `New Training Application: ${firstName} ${lastName}`,
       html: `

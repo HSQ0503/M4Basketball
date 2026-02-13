@@ -1,10 +1,11 @@
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
+import type { Locale } from "@/i18n/config";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const Responsibility = () => {
-  const { responsibility } = getListPage("homepage/-index.md").frontmatter;
+const Responsibility = ({ locale }: { locale?: Locale }) => {
+  const { responsibility } = getListPage("homepage/-index.md", locale).frontmatter;
   return (
     <section className="section-sm pt-0 relative">
       <div className="xl:absolute w-full max-xl:mb-14">

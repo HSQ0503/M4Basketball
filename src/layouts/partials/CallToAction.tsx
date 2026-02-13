@@ -1,12 +1,14 @@
 import CustomButton from "@/components/CustomButton";
 import CustomHeading from "@/components/CustomHeading";
 import ImageFallback from "@/helpers/ImageFallback";
+import type { Locale } from "@/i18n/config";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const CallToAction = () => {
+const CallToAction = ({ locale }: { locale?: Locale }) => {
   const { enable, image, title, subtitle, content, buttons } = getListPage(
     "sections/call-to-action.md",
+    locale,
   ).frontmatter;
   return (
     <>

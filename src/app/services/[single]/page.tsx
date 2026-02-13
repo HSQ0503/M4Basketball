@@ -3,7 +3,9 @@ import ServiceCard from "@/components/ServiceCard";
 import config from "@/config/config.json";
 import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";
+import { getDictionary } from "@/i18n/getDictionary";
 import { getSinglePage } from "@/lib/contentParser";
+import { getLocale } from "@/lib/getLocale";
 import similarItems from "@/lib/utils/similarItems";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
@@ -26,6 +28,8 @@ export const generateStaticParams: () => { single: string }[] = () => {
 const ServiceSingle = async (props: {
   params: Promise<{ single: string }>;
 }) => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
   const params = await props.params;
   const allServices = getSinglePage("services");
   const services = getSinglePage("services");
@@ -49,7 +53,7 @@ const ServiceSingle = async (props: {
             className="text-base text-center text-primary mb-4"
             data-aos="fade-up-sm"
           >
-            Service
+            {dict.services.serviceLabel}
           </p>
           {title && (
             <CustomHeading
@@ -115,7 +119,7 @@ const ServiceSingle = async (props: {
             className="text-h3 md:text-h2 text-center mb-16"
             data-aos="fade-up-sm"
           >
-            More services
+            {dict.services.moreServices}
           </h2>
 
           <div className="row justify-center g-4">
@@ -133,7 +137,7 @@ const ServiceSingle = async (props: {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction locale={locale} />
     </>
   );
 };

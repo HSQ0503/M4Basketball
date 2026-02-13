@@ -1,10 +1,15 @@
+import { getDictionary } from "@/i18n/getDictionary";
+import { getLocale } from "@/lib/getLocale";
 import SeoMeta from "@/partials/SeoMeta";
 import Link from "next/link";
 
 const NotFound = async () => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+
   return (
     <>
-      <SeoMeta title={"Page Not Found"} />
+      <SeoMeta title={dict.notFound.title} />
 
       <section className="section text-center" data-aos="fade-in-sm">
         <div className="container mt-24 sm:mt-20">
@@ -15,15 +20,12 @@ const NotFound = async () => {
               >
                 404
               </span>
-              <h1 className="h2 mb-4" data-aos="fade-up-sm">Page not found</h1>
+              <h1 className="h2 mb-4" data-aos="fade-up-sm">{dict.notFound.heading}</h1>
               <div className="content" data-aos="fade-up-sm">
-                <p>
-                  The page you are looking for might have been removed, had its name
-                  changed, or is temporarily unavailable.
-                </p>
+                <p>{dict.notFound.description}</p>
               </div>
               <Link href="/" className="btn btn-primary mt-8" data-aos="fade-up-sm">
-                Back to home
+                {dict.notFound.backHome}
               </Link>
             </div>
           </div>

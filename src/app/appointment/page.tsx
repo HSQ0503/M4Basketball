@@ -1,14 +1,19 @@
 import AppointmentForm from "@/components/AppointmentForm";
 import CustomHeading from "@/components/CustomHeading";
 import DynamicIcon from "@/helpers/DynamicIcon";
+import { getDictionary } from "@/i18n/getDictionary";
 import { getListPage } from "@/lib/contentParser";
+import { getLocale } from "@/lib/getLocale";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 
-const AppointmentPage = () => {
+const AppointmentPage = async () => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
   const { title, subtitle, description, meta_title, contact_way } = getListPage(
     "appointment/-index.md",
+    locale,
   ).frontmatter;
 
   return (
@@ -44,7 +49,7 @@ const AppointmentPage = () => {
                 data-aos="fade-up-sm"
                 data-aos-delay="100"
               >
-                <AppointmentForm />
+                <AppointmentForm dict={dict} />
               </div>
             </div>
 
@@ -57,7 +62,7 @@ const AppointmentPage = () => {
                 data-aos="fade-up-sm"
                 data-aos-delay="100"
               >
-                Contact us directly
+                {dict.appointmentPage.contactDirectly}
               </h2>
               {contact_way.map((contact: { icon: string; value: string; name: string }, i: number) => (
                 <div
@@ -81,7 +86,7 @@ const AppointmentPage = () => {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction locale={locale} />
     </>
   );
 };

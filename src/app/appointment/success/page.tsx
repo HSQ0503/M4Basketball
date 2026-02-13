@@ -1,15 +1,20 @@
 import CustomButton from "@/components/CustomButton";
 import CustomHeading from "@/components/CustomHeading";
+import { getDictionary } from "@/i18n/getDictionary";
+import { getLocale } from "@/lib/getLocale";
 import SeoMeta from "@/partials/SeoMeta";
 import { FaCircleCheck } from "react-icons/fa6";
 
-const AppointmentSuccessPage = () => {
+const AppointmentSuccessPage = async () => {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+
   return (
     <>
       <SeoMeta
-        title="Application Submitted | M4 Basketball Training"
-        meta_title="Application Submitted | M4 Basketball Training"
-        description="Thank you for your application. We will be in touch soon."
+        title={dict.appointmentSuccess.seoTitle}
+        meta_title={dict.appointmentSuccess.seoTitle}
+        description={dict.appointmentSuccess.seoDescription}
       />
       <section className="section mt-24 sm:mt-20" data-aos="fade-up-sm">
         <div className="container">
@@ -24,7 +29,7 @@ const AppointmentSuccessPage = () => {
 
             <CustomHeading
               as="h1"
-              text="Application **Submitted!**"
+              text={dict.appointmentSuccess.heading}
               className="text-h3 md:text-h2 lg:text-h1 mb-6"
               dataAos="fade-up-sm"
             />
@@ -34,8 +39,7 @@ const AppointmentSuccessPage = () => {
               data-aos="fade-up-sm"
               data-aos-delay="150"
             >
-              Thank you for your interest in M4 Basketball Training. We have
-              received your application and will review it shortly.
+              {dict.appointmentSuccess.thankYou}
             </p>
 
             <p
@@ -43,8 +47,7 @@ const AppointmentSuccessPage = () => {
               data-aos="fade-up-sm"
               data-aos-delay="200"
             >
-              Coach Marcelinho or a member of our team will contact you within
-              24-48 hours to discuss the next steps.
+              {dict.appointmentSuccess.nextSteps}
             </p>
 
             <div
@@ -52,9 +55,9 @@ const AppointmentSuccessPage = () => {
               data-aos="fade-up-sm"
               data-aos-delay="250"
             >
-              <CustomButton label="Back to Home" link="/" variant="primary" />
+              <CustomButton label={dict.appointmentSuccess.backHome} link="/" variant="primary" />
               <CustomButton
-                label="Learn About Our Training"
+                label={dict.appointmentSuccess.learnAbout}
                 link="/about"
                 variant="outline"
               />

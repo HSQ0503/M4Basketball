@@ -17,7 +17,7 @@ hero:
     - "/images/home/mobilebanner1.png"
     - "/images/home/mobilebanner2.png"
   reviews:
-    - name: "7x Brazilian National Champion"
+    - name: "3x Pan American Games Gold Medalist"
       company_logo: "/images/home/2.svg"
       rating: 5.0
     - name: "Olympic Athlete 2012"
