@@ -102,13 +102,14 @@ const Header = ({ dict }: { dict: Dictionary }) => {
           <div className="order-0 flex items-center justify-start -ml-2 md:ml-0" data-aos="zoom-in" data-aos-delay="20">
             <Logo />
           </div>
-          <div className="flex items-center gap-4.5">
+          <div className="flex items-center gap-2 order-1">
+            <LanguageToggle />
             {navigation_button.enable && (
               <CustomButton
                 link={navigation_button.link}
                 label={navigation_button.label}
                 type="btn-sm"
-                className="order-1 hidden lg:hidden! sm:inline-block"
+                className="hidden sm:inline-block"
                 data_aos="zoom-in-sm"
               />
             )}
@@ -117,7 +118,7 @@ const Header = ({ dict }: { dict: Dictionary }) => {
             <input id="nav-toggle" type="checkbox" className="hidden" />
             <label
               htmlFor="nav-toggle"
-              className="order-3 cursor-pointer flex items-center lg:hidden text-text lg:order-1 bg-primary p-2 rounded"
+              className="cursor-pointer flex items-center lg:hidden text-text bg-primary p-2 rounded"
             >
               <svg
                 id="show-button"
@@ -139,38 +140,26 @@ const Header = ({ dict }: { dict: Dictionary }) => {
                 ></polygon>
               </svg>
             </label>
+          </div>
 
-            {/* /navbar toggler  */}
-            <ul id="nav-menu" className="navbar-nav">
-              {navItems.map((item, i: number) => (
-                <li
-                  key={i}
-                  className="nav-item"
-                  data-aos="fade-up-sm"
-                  data-aos-delay={100 + i * 50}
+          {/* nav menu */}
+          <ul id="nav-menu" className="navbar-nav">
+            {navItems.map((item, i: number) => (
+              <li
+                key={i}
+                className="nav-item"
+                data-aos="fade-up-sm"
+                data-aos-delay={100 + i * 50}
+              >
+                <a
+                  href={item.url}
+                  className={`nav-link text-base-sm ${(pathname === `${item.url}/` || pathname === item.url) && "active"}`}
                 >
-                  <a
-                    href={item.url}
-                    className={`nav-link text-base-sm ${(pathname === `${item.url}/` || pathname === item.url) && "active"}`}
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex items-center gap-3 order-1">
-            <LanguageToggle />
-            {navigation_button.enable && (
-              <CustomButton
-                link={navigation_button.link}
-                label={navigation_button.label}
-                type="btn-sm"
-                className="hidden lg:inline-block!"
-                data_aos="zoom-in-sm"
-              />
-            )}
-          </div>
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
       </header>
     </>
