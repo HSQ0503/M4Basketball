@@ -4,7 +4,7 @@
 
 /* navbar items */
 .navbar {
-  @apply py-1 md:py-2 relative flex flex-wrap items-center justify-between transition-all duration-300;
+  @apply py-1 md:py-2 relative flex flex-wrap items-center justify-between transition-all duration-300 lg:grid lg:grid-cols-3;
 }
 
 /* Compact header when scrolled */
@@ -24,7 +24,7 @@
 }
 
 .navbar-nav {
-  @apply rounded text-left order-3 lg:order-1 lg:flex lg:w-auto lg:gap-7 max-lg:py-4 max-lg:px-5 max-lg:opacity-0 max-lg:absolute max-lg:shadow max-lg:z-50 max-lg:top-20 max-lg:bg-body max-lg:w-[calc(100vw_-_10%)] max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2;
+  @apply rounded text-left order-3 lg:order-1 lg:flex lg:w-auto lg:gap-7 lg:justify-self-center max-lg:py-4 max-lg:px-5 max-lg:opacity-0 max-lg:absolute max-lg:shadow max-lg:z-50 max-lg:top-20 max-lg:bg-body max-lg:w-[calc(100vw_-_10%)] max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2;
 }
 
 .nav-link {

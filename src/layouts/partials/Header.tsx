@@ -98,11 +98,13 @@ const Header = ({ dict }: { dict: Dictionary }) => {
 
       <header className="header z-50 absolute top-0">
         <nav className="navbar mx-auto max-w-[1356px]! px-4 md:px-[30px]">
-          {/* logo  */}
-          <div className="order-0 flex items-center justify-start -ml-2 md:ml-0" data-aos="zoom-in" data-aos-delay="20">
+          {/* Left: Logo */}
+          <div className="order-0 flex items-center -ml-2 md:ml-0" data-aos="zoom-in" data-aos-delay="20">
             <Logo />
           </div>
-          <div className="flex items-center gap-2 order-1">
+
+          {/* Right: Language Toggle + Apply Now + Hamburger */}
+          <div className="flex items-center gap-2 order-1 lg:order-2 lg:justify-self-end">
             <LanguageToggle />
             {navigation_button.enable && (
               <CustomButton
@@ -114,8 +116,7 @@ const Header = ({ dict }: { dict: Dictionary }) => {
               />
             )}
 
-            {/* navbar toggler  */}
-            <input id="nav-toggle" type="checkbox" className="hidden" />
+            {/* navbar toggler label */}
             <label
               htmlFor="nav-toggle"
               className="cursor-pointer flex items-center lg:hidden text-text bg-primary p-2 rounded"
@@ -141,6 +142,9 @@ const Header = ({ dict }: { dict: Dictionary }) => {
               </svg>
             </label>
           </div>
+
+          {/* Hidden checkbox must be a direct child of nav for sibling CSS selectors to work with #nav-menu */}
+          <input id="nav-toggle" type="checkbox" className="hidden order-[99]" />
 
           {/* nav menu */}
           <ul id="nav-menu" className="navbar-nav">
