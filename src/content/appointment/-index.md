@@ -15,5 +15,5 @@ contact_way:
     value: "Jan-Feb: SAT 3-5 PM <br> March+: Weekdays (TBD)"
   - name: "Email"
     icon: "FaEnvelope"
-    value: "m4basket@gmail.com"
+    value: "marcelo@m4basketball.com"
 ---

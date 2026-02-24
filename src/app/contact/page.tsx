@@ -86,10 +86,10 @@ const Contact = async () => {
                     <div>
                       <h4 className="font-semibold text-lg mb-1">{dict.contact.email}</h4>
                       <a
-                        href="mailto:m4basket@gmail.com"
+                        href="mailto:marcelo@m4basketball.com"
                         className="text-xl text-primary hover:underline break-all"
                       >
-                        m4basket@gmail.com
+                        marcelo@m4basketball.com
                       </a>
                     </div>
                   </div>

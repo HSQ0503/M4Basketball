@@ -15,5 +15,5 @@ contact_way:
     value: "Segunda, Terça e Sexta-feira"
   - name: "Email"
     icon: "FaEnvelope"
-    value: "m4basket@gmail.com"
+    value: "marcelo@m4basketball.com"
 ---
